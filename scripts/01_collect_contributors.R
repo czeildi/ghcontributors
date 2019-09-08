@@ -9,7 +9,7 @@ gh_token <- Sys.getenv("GH_CONTRIB_PAT")
 
 # collect data ------------------------------------------------------------
 
-stopifnot(Sys.Date() > report_end_date)
+stopifnot(Sys.Date() >= report_end_date)
 
 api_response_cache_folder <- here::here("data", glue::glue("commits_{org_name}_{report_start_date}_{report_end_date}")) %T>%
     dir.create(recursive = TRUE, showWarnings = FALSE)

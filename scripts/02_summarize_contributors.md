@@ -9,7 +9,7 @@ output:
 
 
 
-- Github organization: ropensci.
+- Github organization: **ropensci**.
 - Commits were considered from 2018-09-01 to 2019-09-01.
 - Excluded users: web-flow, ropenscibot.
 
@@ -25,21 +25,30 @@ output:
 ### Top contributors
 
 
-author_id           n_commit   n_repo  is_identifiable_by_login   author_name       
------------------  ---------  -------  -------------------------  ------------------
-sckott                  2365       99  TRUE                       Scott Chamberlain 
-jeroen                   816       83  TRUE                       Jeroen Ooms       
-maelle                   570       39  TRUE                       Maëlle Salmon     
-Bisaloo                   77       13  TRUE                       Hugo Gruson       
-cboettig                 493       12  TRUE                       Carl Boettiger    
-adamhsparks             1188        7  TRUE                       Adam H. Sparks    
-mpadge                   273        7  TRUE                       mpadge            
-richelbilderbeek        1378        6  TRUE                       richelbilderbeek  
-noamross                 192        6  TRUE                       Noam Ross         
-Rekyt                    225        5  TRUE                       Rekyt             
-wlandau                 1451        3  TRUE                       wlandau           
-Robinlovelace            442        3  TRUE                       Robin Lovelace    
-wlandau-lilly            727        2  TRUE                       wlandau-lilly     
+```r
+author_summary %>% 
+    filter(n_commit * n_repo >= 1000) %>% 
+    select(author_id, author_name, n_commit, n_repo) %>% 
+    knitr::kable()
+```
+
+
+
+author_id          author_name          n_commit   n_repo
+-----------------  ------------------  ---------  -------
+sckott             Scott Chamberlain        2365       99
+jeroen             Jeroen Ooms               816       83
+maelle             Maëlle Salmon             570       39
+Bisaloo            Hugo Gruson                77       13
+cboettig           Carl Boettiger            493       12
+adamhsparks        Adam H. Sparks           1188        7
+mpadge             mpadge                    273        7
+richelbilderbeek   richelbilderbeek         1378        6
+noamross           Noam Ross                 192        6
+Rekyt              Rekyt                     225        5
+wlandau            wlandau                  1451        3
+Robinlovelace      Robin Lovelace            442        3
+wlandau-lilly      wlandau-lilly             727        2
 
 
 **Total number of contributors in the past year: 312.**

@@ -64,8 +64,11 @@ author_summary <- cleaned_commits %>%
 
 ### Top contributors
 
-```{r}
-knitr::kable(filter(author_summary, n_commit * n_repo > 1000))
+```{r,echo=TRUE}
+author_summary %>% 
+    filter(n_commit * n_repo >= 1000) %>% 
+    select(author_id, author_name, n_commit, n_repo) %>% 
+    knitr::kable()
 ```
 
 

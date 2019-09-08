@@ -183,114 +183,104 @@ summary {
 
 
 <ul>
-<li>Github organization: ropensci.</li>
+<li>Github organization: <strong>ropensci</strong>.</li>
 <li>Commits were considered from 2018-09-01 to 2019-09-01.</li>
 <li>Excluded users: web-flow, ropenscibot.</li>
 </ul>
 <pre><code>## 4 commits were discarded due to being unidentifiable.</code></pre>
 <div id="top-contributors" class="section level3">
 <h3>Top contributors</h3>
+<pre class="r"><code>author_summary %&gt;% 
+    filter(n_commit * n_repo &gt;= 1000) %&gt;% 
+    select(author_id, author_name, n_commit, n_repo) %&gt;% 
+    knitr::kable()</code></pre>
 <table>
 <thead>
 <tr class="header">
 <th align="left">author_id</th>
+<th align="left">author_name</th>
 <th align="right">n_commit</th>
 <th align="right">n_repo</th>
-<th align="left">is_identifiable_by_login</th>
-<th align="left">author_name</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">sckott</td>
+<td align="left">Scott Chamberlain</td>
 <td align="right">2365</td>
 <td align="right">99</td>
-<td align="left">TRUE</td>
-<td align="left">Scott Chamberlain</td>
 </tr>
 <tr class="even">
 <td align="left">jeroen</td>
+<td align="left">Jeroen Ooms</td>
 <td align="right">816</td>
 <td align="right">83</td>
-<td align="left">TRUE</td>
-<td align="left">Jeroen Ooms</td>
 </tr>
 <tr class="odd">
 <td align="left">maelle</td>
+<td align="left">Maëlle Salmon</td>
 <td align="right">570</td>
 <td align="right">39</td>
-<td align="left">TRUE</td>
-<td align="left">Maëlle Salmon</td>
 </tr>
 <tr class="even">
 <td align="left">Bisaloo</td>
+<td align="left">Hugo Gruson</td>
 <td align="right">77</td>
 <td align="right">13</td>
-<td align="left">TRUE</td>
-<td align="left">Hugo Gruson</td>
 </tr>
 <tr class="odd">
 <td align="left">cboettig</td>
+<td align="left">Carl Boettiger</td>
 <td align="right">493</td>
 <td align="right">12</td>
-<td align="left">TRUE</td>
-<td align="left">Carl Boettiger</td>
 </tr>
 <tr class="even">
 <td align="left">adamhsparks</td>
+<td align="left">Adam H. Sparks</td>
 <td align="right">1188</td>
 <td align="right">7</td>
-<td align="left">TRUE</td>
-<td align="left">Adam H. Sparks</td>
 </tr>
 <tr class="odd">
+<td align="left">mpadge</td>
 <td align="left">mpadge</td>
 <td align="right">273</td>
 <td align="right">7</td>
-<td align="left">TRUE</td>
-<td align="left">mpadge</td>
 </tr>
 <tr class="even">
+<td align="left">richelbilderbeek</td>
 <td align="left">richelbilderbeek</td>
 <td align="right">1378</td>
 <td align="right">6</td>
-<td align="left">TRUE</td>
-<td align="left">richelbilderbeek</td>
 </tr>
 <tr class="odd">
 <td align="left">noamross</td>
+<td align="left">Noam Ross</td>
 <td align="right">192</td>
 <td align="right">6</td>
-<td align="left">TRUE</td>
-<td align="left">Noam Ross</td>
 </tr>
 <tr class="even">
+<td align="left">Rekyt</td>
 <td align="left">Rekyt</td>
 <td align="right">225</td>
 <td align="right">5</td>
-<td align="left">TRUE</td>
-<td align="left">Rekyt</td>
 </tr>
 <tr class="odd">
+<td align="left">wlandau</td>
 <td align="left">wlandau</td>
 <td align="right">1451</td>
 <td align="right">3</td>
-<td align="left">TRUE</td>
-<td align="left">wlandau</td>
 </tr>
 <tr class="even">
 <td align="left">Robinlovelace</td>
+<td align="left">Robin Lovelace</td>
 <td align="right">442</td>
 <td align="right">3</td>
-<td align="left">TRUE</td>
-<td align="left">Robin Lovelace</td>
 </tr>
 <tr class="odd">
 <td align="left">wlandau-lilly</td>
+<td align="left">wlandau-lilly</td>
 <td align="right">727</td>
 <td align="right">2</td>
-<td align="left">TRUE</td>
-<td align="left">wlandau-lilly</td>
 </tr>
 </tbody>
 </table>
