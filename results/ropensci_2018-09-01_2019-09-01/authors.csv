@@ -1,0 +1,313 @@
+author_id,n_commit,n_repo,is_identifiable_by_login,author_name
+sckott,2365,99,TRUE,Scott Chamberlain
+jeroen,816,83,TRUE,Jeroen Ooms
+maelle,570,39,TRUE,Maëlle Salmon
+Bisaloo,77,13,TRUE,Hugo Gruson
+cboettig,493,12,TRUE,Carl Boettiger
+katrinleinweber,12,9,TRUE,Katrin Leinweber
+jsta,33,8,TRUE,jsta
+adamhsparks,1188,7,TRUE,Adam H. Sparks
+mpadge,273,7,TRUE,mpadge
+richelbilderbeek,1378,6,TRUE,richelbilderbeek
+noamross,192,6,TRUE,Noam Ross
+Rekyt,225,5,TRUE,Rekyt
+peterdesmet,95,5,TRUE,Peter Desmet
+karthik,23,5,TRUE,Karthik Ram
+annakrystalli,10,5,TRUE,Anna Krystalli
+juyeongkim,137,4,TRUE,Ju Yeong Kim
+njtierney,91,4,TRUE,Nicholas Tierney
+boshek,84,4,TRUE,Sam Albers
+wlandau,1451,3,TRUE,wlandau
+Robinlovelace,442,3,TRUE,Robin Lovelace
+stefaniebutland,315,3,TRUE,Stefanie Butland
+marcosci,297,3,TRUE,marco
+robitalec,286,3,TRUE,Alec Robitaille
+DomBennett,163,3,TRUE,Dominic Bennett
+laurajanegraham,106,3,TRUE,laurajanegraham
+raymondben,45,3,TRUE,Ben Raymond
+MahShaaban,26,3,TRUE,Mahmoud Shaaban
+maurolepore,14,3,TRUE,mauro
+njahn82,14,3,TRUE,Najko Jahn
+dpprdan,10,3,TRUE,Daniel Possenriede
+muschellij2,9,3,TRUE,muschellij2
+amoeba,8,3,TRUE,Bryce Mecum
+jimhester,4,3,TRUE,Jim Hester
+wlandau-lilly,727,2,TRUE,wlandau-lilly
+cpsievert,430,2,TRUE,Carson Sievert
+ThierryO,266,2,TRUE,ThierryO
+timtrice,210,2,TRUE,Tim Trice
+kshtzgupta1,182,2,TRUE,Kshitiz Gupta
+OJWatson,168,2,TRUE,OJWatson
+layik,130,2,TRUE,Layik Hama
+stijnvanhoey,126,2,TRUE,stijnvanhoey
+tklebel,117,2,TRUE,Thomas Klebel
+mdsumner,101,2,TRUE,Michael Sumner
+hlapp,99,2,TRUE,Hilmar Lapp
+richfitz,71,2,TRUE,Rich FitzJohn
+leonawicz,69,2,TRUE,leonawicz
+pachamaltese,68,2,TRUE,pachamaltese
+gfinak,63,2,TRUE,gfinak
+juliasilge,59,2,TRUE,Julia Silge
+rorynolan,58,2,TRUE,Rory Nolan
+fmichonneau,53,2,TRUE,François Michonneau
+wrightaprilm,38,2,TRUE,April Wright
+mem48,35,2,TRUE,Malcolm Morgan
+mbjoseph,27,2,TRUE,Max Joseph
+mahmoud ahmed,24,2,FALSE,Mahmoud Ahmed
+AliciaSchep,22,2,TRUE,AliciaSchep
+crew102,20,2,TRUE,Chris Baker
+LDalby,19,2,TRUE,LDalby
+zachary-foster,19,2,TRUE,zachary-foster
+RLumSK,16,2,TRUE,RLumSK
+ethanwhite,15,2,TRUE,Ethan White
+kbroman,15,2,TRUE,Karl Broman
+evanodell,12,2,TRUE,evan
+bitbacchus,10,2,TRUE,Sebastian Hanss
+arendsee,7,2,TRUE,Zebulun Arendsee
+cvitolo,7,2,TRUE,Claudia Vitolo
+rabutler-usbr,7,2,TRUE,Alan Butler
+rtaph,7,2,TRUE,Rafael Pilliard Hellwig
+tim,7,2,FALSE,Tim
+emhart,6,2,TRUE,Edmund Hart
+taddallas,5,2,TRUE,taddallas
+brry,4,2,TRUE,Berry Boessenkool
+rvosa,4,2,TRUE,Rutger Vos
+cderv,3,2,TRUE,Christophe Dervieux
+fozy81,3,2,TRUE,fozy81
+gothub,3,2,TRUE,gothub
+ibartomeus,3,2,TRUE,Ignasi Bartomeus
+melvidoni,3,2,TRUE,Melina Vidoni
+aaronwolen,2,2,TRUE,Aaron Wolen
+AldoCompagnoni,2,2,TRUE,Aldo Compagnoni
+ateucher,2,2,TRUE,Andy Teucher
+billdenney,2,2,TRUE,Bill Denney
+dmi3kno,2,2,TRUE,Dmytro Perepolkin
+edzer,2,2,TRUE,Edzer Pebesma
+kant,2,2,TRUE,Darío Hereñú
+lmullen,2,2,TRUE,Lincoln Mullen
+martinjhnhadley,2,2,TRUE,Martin John Hadley
+JingningShi,392,1,TRUE,Jingning Shi
+eebrown,255,1,TRUE,eebrown
+robbriers,222,1,TRUE,Rob Briers
+sebastiz,219,1,TRUE,sebastiz
+HajkD,187,1,TRUE,HajkD
+hettling,145,1,TRUE,hettling
+nldoc,139,1,TRUE,nldoc
+bpbond,132,1,TRUE,Ben Bond-Lamberty
+kenarab,123,1,TRUE,alejandro baranek
+compagnoni,122,1,FALSE,Compagnoni
+stewid,118,1,TRUE,Stefan Widgren
+ShixiangWang,111,1,TRUE,ShixiangWang
+damianooldoni,103,1,TRUE,damianooldoni
+cimentadaj,102,1,TRUE,Jorge Cimentada
+PMassicotte,95,1,TRUE,Philippe Massicotte
+khufkens,92,1,TRUE,Koen Hufkens
+azizka,80,1,TRUE,azizka
+elinw,76,1,TRUE,Elin Waring
+lbusett,73,1,TRUE,lbusett
+potterzot,67,1,TRUE,Nicholas Potter
+leobelen,59,1,TRUE,Leonardo Javier Belen
+cstubben,57,1,TRUE,Chris Stubben
+sebpardo,56,1,TRUE,Sebastian Pardo
+sebastian-fox,53,1,TRUE,Sebastian Fox
+zizka,53,1,FALSE,Zizka
+erzk,44,1,TRUE,Eryk
+KevCaz,41,1,TRUE,Kevin Cazelles
+rfhb,38,1,TRUE,Ralf Herold
+henrykironde,36,1,TRUE,henrykironde
+SimonGoring,35,1,TRUE,Simon
+eveskew,34,1,TRUE,Evan Eskew
+mwmclean,33,1,TRUE,Mathew W. McLean
+steffilazerte,32,1,TRUE,Steffi LaZerte
+FilipeamTeixeira,31,1,TRUE,FilipeamTeixeira
+petermeissner,31,1,TRUE,petermeissner
+MilesMcBain,30,1,TRUE,Miles McBain
+sharlagelfand,30,1,TRUE,Sharla Gelfand
+nuest,27,1,TRUE,nuest
+MarkEdmondson1234,24,1,TRUE,Mark Edmondson
+jmtaylor-fhcrc,23,1,TRUE,Jason Taylor
+goodmansasha,21,1,TRUE,Sasha Goodman
+JohnOrmerod,21,1,TRUE,John Ormerod
+JonasGeschke,21,1,TRUE,JonasGeschke
+florisvdh,20,1,TRUE,florisvdh
+willpearse,18,1,TRUE,Will Pearse
+blasee,16,1,TRUE,Blake Seers
+bocinsky,16,1,FALSE,Bocinsky
+bocinsky,16,1,TRUE,R. Kyle Bocinsky
+jhpoelen,15,1,TRUE,jhpoelen
+jonocarroll,15,1,TRUE,Jonathan Carroll
+ottlngr,15,1,TRUE,Philipp Ottolinger
+tjmahr,15,1,TRUE,TJ Mahr
+hsonne,14,1,TRUE,Hauke Sonnenberg
+levisc8,14,1,TRUE,levisc8
+agricolamz,11,1,TRUE,George Moroz
+briatte,10,1,TRUE,François Briatte
+FranzKrah,10,1,TRUE,Franz
+samzipper,10,1,TRUE,Sam Zipper
+Aariq,9,1,TRUE,Aariq
+AndySouth,9,1,TRUE,AndySouth
+ChrisMuir,9,1,TRUE,ChrisMuir
+tonyfischetti,9,1,TRUE,Tony Fischetti
+=,8,1,FALSE,=
+dwinter,8,1,TRUE,dwinter
+emitanaka,8,1,TRUE,Emi Tanaka
+gpli,8,1,TRUE,Gaopeng Li
+ilapros,8,1,TRUE,ilapros
+MartinMSPedersen,8,1,TRUE,Martin M. S. Pedersen
+orchid00,8,1,TRUE,Paula Andrea Martinez
+rmendels,8,1,TRUE,Roy Mendelssohn
+chreman,7,1,TRUE,Christopher Kittel
+Lingtax,7,1,TRUE,Lingtax
+nealrichardson,7,1,TRUE,Neal Richardson
+Nowosad,7,1,TRUE,jn
+pranita-s,7,1,TRUE,pranita-s
+schloerke,7,1,TRUE,Barret Schloerke
+haozhu233,6,1,TRUE,Hao Zhu
+knh11545,6,1,TRUE,Helge Knüttel
+michaelquinn32,6,1,TRUE,Michael Quinn
+stitam,6,1,TRUE,stitam
+ubuntu,6,1,FALSE,Ubuntu
+andschar,5,1,TRUE,andreas
+dpmccabe,5,1,TRUE,Devin McCabe
+EDiLD,5,1,TRUE,Eduard Szöcs
+gbabineau,5,1,TRUE,gbabineau
+hansvancalster,5,1,TRUE,Hans Van Calster
+jeanetteclark,5,1,TRUE,Jeanette Clark
+jlopezper,5,1,TRUE,jlopezper
+nbenn,5,1,TRUE,Nicolas Bennett
+thisisnic,5,1,TRUE,Nic
+barryrowlingson,4,1,TRUE,Barry Rowlingson
+dantonnoriega,4,1,TRUE,Danton Noriega
+dlebauer,4,1,TRUE,David LeBauer
+kritikg,4,1,FALSE,KritikG
+sebsfox,4,1,TRUE,sebsfox
+Alanocallaghan,3,1,TRUE,Alan O'Callaghan
+alyst,3,1,TRUE,Alexey Stukalov
+bibsian,3,1,TRUE,bibsian
+brendanf,3,1,TRUE,brendanf
+daudi,3,1,TRUE,David Whiting
+ElsLommelen,3,1,TRUE,ElsLommelen
+florianm,3,1,TRUE,Florian Mayer
+harshitbansal05,3,1,TRUE,Harshit Bansal
+Hong-Revo,3,1,TRUE,hong-revo
+ijlyttle,3,1,TRUE,Ian Lyttle
+javigzz,3,1,TRUE,Javier González
+jeffreyhanson,3,1,TRUE,jeffreyhanson
+kangel,3,1,FALSE,kangel
+kbenoit,3,1,TRUE,kbenoit
+kylevoyto,3,1,TRUE,Kyle Voytovich
+Martin-Jung,3,1,TRUE,Martin-Jung
+mps9506,3,1,TRUE,mps9506
+mschubert,3,1,TRUE,Michael Schubert
+r-ash,3,1,TRUE,Rob
+strboul,3,1,TRUE,Metin Yazici
+angela-li,2,1,TRUE,Angela Li
+aoles,2,1,TRUE,Andrzej K. Oleś
+AugustT,2,1,TRUE,Dr Tom August
+bambooforest,2,1,TRUE,bambooforest@gmail.com
+dgrtwo,2,1,TRUE,David Robinson
+eblondel,2,1,TRUE,eblondel
+etiennebr,2,1,TRUE,Etienne B. Racine
+fboehm,2,1,TRUE,Frederick Boehm
+gadenbuie,2,1,TRUE,Garrick Aden-Buie
+gjgetzinger,2,1,FALSE,gjgetzinger
+grabear,2,1,TRUE,Rob Gilmore
+JasperHG90,2,1,TRUE,Jasper Ginn
+jooolia,2,1,TRUE,Julia Gustavsen
+kaneplusplus,2,1,TRUE,Michael Kane
+kevinykuo,2,1,TRUE,Kevin Kuo
+lionel-,2,1,TRUE,Lionel Henry
+LucyMcGowan,2,1,TRUE,Lucy McGowan
+mitchelloharawild,2,1,TRUE,Mitchell O'Hara-Wild
+MusTheDataGuy,2,1,TRUE,MusTheDataGuy
+pat-s,2,1,TRUE,pat-s
+rensa,2,1,TRUE,James Goldie
+robjhyndman,2,1,TRUE,Rob J Hyndman
+thebioengineer,2,1,TRUE,Ellis Hughes
+tmastny,2,1,TRUE,Timothy Mastny
+yomoseco,2,1,TRUE,Marco
+zappingseb,2,1,TRUE,Sebastian Wolf
+anniew,1,1,TRUE,Annie Wang
+arnima-github,1,1,TRUE,Arni Magnusson
+atn38,1,1,TRUE,An T. Nguyen
+bastistician,1,1,TRUE,Sebastian Meyer
+brooklynbagel,1,1,TRUE,Michael Beigelmacher
+ccamara,1,1,TRUE,Carlos Cámara
+chameleon cloud user,1,1,FALSE,Chameleon Cloud User
+cmcaine,1,1,TRUE,Colin Caine
+coatless,1,1,TRUE,James Balamuta
+csim063,1,1,TRUE,csim063
+cstepper,1,1,TRUE,Christoph Stepper
+danielskatz,1,1,TRUE,Daniel S. Katz
+davedgd,1,1,TRUE,David Dobolyi
+davidkretch,1,1,TRUE,David Kretch
+deanmarchiori-irx,1,1,TRUE,Dean Marchiori
+denrou,1,1,TRUE,Denis Roussel
+docsteveharris,1,1,TRUE,Steve Harris
+eheisman,1,1,TRUE,Evan Heisman
+eknud,1,1,TRUE,Eric Knudsen
+EmilHvitfeldt,1,1,TRUE,Emil Hvitfeldt
+eriksapper,1,1,TRUE,eriksapper
+esellers-usgs,1,1,TRUE,Elizabeth Sellers
+espinielli,1,1,TRUE,Enrico Spinielli
+etienne-s,1,1,TRUE,etienne-s
+filipefilardi,1,1,TRUE,Filipe Filardi
+gogonzo,1,1,TRUE,go_gonzo
+hadley,1,1,TRUE,Hadley Wickham
+helen miller,1,1,FALSE,Helen Miller
+ImgBotApp,1,1,TRUE,ImgBotApp
+infotroph,1,1,TRUE,Chris Black
+jebyrnes,1,1,TRUE,Jarrett Byrnes
+jeffeaton,1,1,TRUE,jeffeaton
+JimShady,1,1,TRUE,JimShady
+JimUttley,1,1,TRUE,JimUttley
+jmboehm,1,1,TRUE,Johannes Boehm
+jmobrien,1,1,TRUE,jmobrien
+john waller,1,1,FALSE,John Waller
+jpiaskowski,1,1,TRUE,jpiaskowski
+jrnold,1,1,TRUE,Jeffrey Arnold
+karawoo,1,1,TRUE,Kara Woo
+koheiw,1,1,TRUE,Kohei Watanabe
+krlmlr,1,1,TRUE,Kirill Müller
+laurenwalker,1,1,TRUE,Lauren Walker
+llrs,1,1,TRUE,Lluís
+mairindeith,1,1,TRUE,Mairin Deith
+markdly,1,1,TRUE,Mark Dulhunty
+marulango,1,1,TRUE,Maru Lango
+michaelbabyn,1,1,TRUE,michaelbabyn
+MiguelRodo,1,1,TRUE,Miguel Rodo
+miles smith,1,1,FALSE,Miles Smith
+mkcor,1,1,TRUE,Marianne Corvellec
+mrustl,1,1,TRUE,Michael Rustler
+nevrome,1,1,TRUE,Clemens Schmid
+nicholsn,1,1,TRUE,Nolan Nichols
+nickreich,1,1,TRUE,Nicholas G Reich
+nickto,1,1,TRUE,Nick To
+orenov,1,1,TRUE,oleksii renov
+oristaszewski,1,1,TRUE,oristaszewski
+pcarbo,1,1,TRUE,Peter Carbonetto
+phoebewong,1,1,TRUE,Phoebe Wong
+poldham,1,1,TRUE,Paul Oldham
+richardjtelford,1,1,TRUE,Richard J Telford
+romainfrancois,1,1,TRUE,Romain Francois
+sa-lee,1,1,TRUE,Stuart Lee
+salim-b,1,1,TRUE,Salim B
+samuelkaminsky,1,1,TRUE,Samuel Kaminsky
+sctyner,1,1,TRUE,Sam Tyner
+seaaan,1,1,TRUE,Sean Hughes
+seanolondon,1,1,TRUE,seanolondon
+setgree,1,1,TRUE,Seth Ariel Green
+simonthelwall,1,1,TRUE,Simon Thelwall
+starship9,1,1,TRUE,Nishank Saini
+stevenysw,1,1,TRUE,steven2249
+strnda,1,1,TRUE,Filip Strnad
+tiernanmartin,1,1,TRUE,Tiernan Martin
+TrashBirdEcology,1,1,TRUE,Jessica Burnett
+ttimbers,1,1,TRUE,Tiffany A. Timbers
+undocumeantit,1,1,FALSE,unDocUMeantIt
+uribo,1,1,TRUE,Shinya Uryu
+Vaugoyeau,1,1,TRUE,Marie Vaugoyeau
+xvrdm,1,1,TRUE,Xavier A
+yihui,1,1,TRUE,Yihui Xie
+yufree,1,1,TRUE,Miao YU
+Z3tt,1,1,TRUE,Cédric Scherer

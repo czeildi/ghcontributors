@@ -10,7 +10,12 @@ transform_commits_api_response_to_tibble <- function(commits_api_response, repo)
         tibble::tibble(
             repo = repo,
             commit_date = purrr::pluck(.x, "commit", "author", "date", .default = NA_character_),
-            author_login = purrr::pluck(.x, "author", "login", .default = NA_character_)
+            commit_author_name = purrr::pluck(.x, "commit", "author", "name", .default = NA_character_),
+            commit_author_email = purrr::pluck(.x, "commit", "author", "email", .default = NA_character_),
+            commit_committer_name = purrr::pluck(.x, "commit", "committer", "name", .default = NA_character_),
+            commit_committer_email = purrr::pluck(.x, "commit", "committer", "email", .default = NA_character_),
+            author_login = purrr::pluck(.x, "author", "login", .default = NA_character_),
+            committer_login = purrr::pluck(.x, "committer", "login", .default = NA_character_)
         )
     })
 }
