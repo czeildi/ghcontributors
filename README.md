@@ -18,6 +18,9 @@ Store it in your `.Renviron` with name `GH_CONTRIB_PAT` or change this line in `
 
 ## Results
 
+- csv files in the results folder
+- Rmd report in scripts folder
+
 ## Notes
 
 - 1 person might use multiple github users
