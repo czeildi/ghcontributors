@@ -13,13 +13,25 @@ The goal of gh-contributors is to summarize contributors to a GitHub organizatio
 
 Store it in your `.Renviron` with name `GH_CONTRIB_PAT` or change this line in `scripts/01_collect_contributors.R` to reflect the name of your token.
 
-- `scripts/01_collect_contributors.R`
-- `scripts/02_summarize_contributors.R`
+- run `scripts/01_collect_contributors.R`, this can take up to 10 minutes (requesting commit history for each repository)
+- knit `scripts/02_summarize_contributors.Rmd` (optionally change params in the yaml header) or call 
+```r
+rmarkdown::render(
+    "scripts/02_summarize_contributors.Rmd",
+    params = list(
+        org_name = "ropensci",
+        report_start_date = as.Date("2018-09-01"),
+        report_end_date = as.Date("2019-09-01")
+    ),
+    output_dir = "results/ropensci_2018-09-01_2019-09-01",
+    output_file = "code_contributors"
+)
+```
 
 ## Results
 
-- csv files in the results folder
-- Rmd report in scripts folder
+- csv files in the results folder (in subfolder for dates + org)
+- html + md report in the results folder (in subfolder for dates + org)
 
 ## Notes
 
