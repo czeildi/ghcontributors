@@ -67,6 +67,8 @@ author_summary <- cleaned_commits %>%
     readr::write_csv(file.path(result_folder, "authors.csv"))
 ```
 
+**Total number of contributors in the past year: `r nrow(author_summary)`.**
+
 ### Top contributors
 
 ```{r,echo=TRUE}
@@ -76,8 +78,6 @@ author_summary %>%
     knitr::kable()
 ```
 
-
-**Total number of contributors in the past year: `r nrow(author_summary)`.**
 
 ### Authors by number of repositories they contributed to
 

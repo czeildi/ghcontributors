@@ -27,6 +27,8 @@ params:
 
 
 
+**Total number of contributors in the past year: 312.**
+
 ### Top contributors
 
 
@@ -55,8 +57,6 @@ author_summary %>%
 |Robinlovelace    |Robin Lovelace    |      442|      3|
 |wlandau-lilly    |wlandau-lilly     |      727|      2|
 
-
-**Total number of contributors in the past year: 312.**
 
 ### Authors by number of repositories they contributed to
 
