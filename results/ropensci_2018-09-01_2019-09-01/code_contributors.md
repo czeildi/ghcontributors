@@ -39,21 +39,21 @@ author_summary %>%
 
 
 
-author_id          author_name          n_commit   n_repo
------------------  ------------------  ---------  -------
-sckott             Scott Chamberlain        2365       99
-jeroen             Jeroen Ooms               816       83
-maelle             Maëlle Salmon             570       39
-Bisaloo            Hugo Gruson                77       13
-cboettig           Carl Boettiger            493       12
-adamhsparks        Adam H. Sparks           1188        7
-mpadge             mpadge                    273        7
-richelbilderbeek   richelbilderbeek         1378        6
-noamross           Noam Ross                 192        6
-Rekyt              Rekyt                     225        5
-wlandau            wlandau                  1451        3
-Robinlovelace      Robin Lovelace            442        3
-wlandau-lilly      wlandau-lilly             727        2
+|author_id        |author_name       | n_commit| n_repo|
+|:----------------|:-----------------|--------:|------:|
+|sckott           |Scott Chamberlain |     2365|     99|
+|jeroen           |Jeroen Ooms       |      816|     83|
+|maelle           |Maëlle Salmon     |      570|     39|
+|Bisaloo          |Hugo Gruson       |       77|     13|
+|cboettig         |Carl Boettiger    |      493|     12|
+|adamhsparks      |Adam H. Sparks    |     1188|      7|
+|mpadge           |mpadge            |      273|      7|
+|richelbilderbeek |richelbilderbeek  |     1378|      6|
+|noamross         |Noam Ross         |      192|      6|
+|Rekyt            |Rekyt             |      225|      5|
+|wlandau          |wlandau           |     1451|      3|
+|Robinlovelace    |Robin Lovelace    |      442|      3|
+|wlandau-lilly    |wlandau-lilly     |      727|      2|
 
 
 **Total number of contributors in the past year: 312.**
@@ -61,26 +61,26 @@ wlandau-lilly      wlandau-lilly             727        2
 ### Authors by number of repositories they contributed to
 
 
-n_repo    n_author
--------  ---------
-1              225
-2               54
-3               15
-4                3
-5                4
-6-10             6
-11-50            3
-50+              2
+|n_repo | n_author|
+|:------|--------:|
+|1      |      225|
+|2      |       54|
+|3      |       15|
+|4      |        3|
+|5      |        4|
+|6-10   |        6|
+|11-50  |        3|
+|50+    |        2|
 
 ### Authors by number of commits they made
 
 
-n_commit    n_author
----------  ---------
-1                 84
-2-5               78
-6-10              37
-11-100            72
-101-1000          37
-1000+              4
+|n_commit | n_author|
+|:--------|--------:|
+|1        |       84|
+|2-5      |       78|
+|6-10     |       37|
+|11-100   |       72|
+|101-1000 |       37|
+|1000+    |        4|
 

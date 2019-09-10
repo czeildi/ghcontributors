@@ -16,6 +16,7 @@ library("dplyr")
 library("magrittr")
 source(here::here("R/clean_authors.R"))
 options(readr.num_columns = 0)
+options(knitr.table.format = 'markdown')
 ```
 
 ```{r report_params}
