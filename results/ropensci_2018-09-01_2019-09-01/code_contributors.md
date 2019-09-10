@@ -3,6 +3,11 @@ title: "summarize contributors"
 output: 
     html_document:
         keep_md: yes
+params:
+    org_name: "ropensci"
+    report_start_date: !r as.Date("2018-09-01")
+    report_end_date: !r as.Date("2019-09-01")
+    bot_gh_users: !r c("web-flow", "ropenscibot")
 ---
 
 

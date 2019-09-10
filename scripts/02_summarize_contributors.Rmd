@@ -3,6 +3,11 @@ title: "summarize contributors"
 output: 
     html_document:
         keep_md: yes
+params:
+    org_name: "ropensci"
+    report_start_date: !r as.Date("2018-09-01")
+    report_end_date: !r as.Date("2019-09-01")
+    bot_gh_users: !r c("web-flow", "ropenscibot")
 ---
 
 ```{r setup, include=FALSE}
@@ -14,11 +19,10 @@ options(readr.num_columns = 0)
 ```
 
 ```{r report_params}
-org_name <- "ropensci"
-report_start_date <- as.Date("2018-09-01")
-report_end_date <- report_start_date + lubridate::period(1, "year")
-
-bot_gh_users <- c("web-flow", "ropenscibot")
+org_name <- params$org_name
+report_start_date <- params$report_start_date
+report_end_date <- params$report_end_date
+bot_gh_users <- params$bot_gh_users
 ```
 
 - Github organization: **`r org_name`**.
