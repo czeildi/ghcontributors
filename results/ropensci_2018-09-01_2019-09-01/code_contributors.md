@@ -27,14 +27,14 @@ params:
 
 
 
-**Total number of contributors in the past year: 312.**
+**Total number of contributors in the past year: 286.**
 
 ### Top contributors
 
 
 ```r
 author_summary %>% 
-    filter(n_commit * n_repo >= 1000) %>% 
+    dplyr::filter(n_commit * n_repo >= 1000) %>% 
     select(author_id, author_name, n_commit, n_repo) %>% 
     knitr::kable()
 ```
@@ -43,19 +43,16 @@ author_summary %>%
 
 |author_id        |author_name       | n_commit| n_repo|
 |:----------------|:-----------------|--------:|------:|
-|sckott           |Scott Chamberlain |     2365|     99|
-|jeroen           |Jeroen Ooms       |      816|     83|
-|maelle           |Maëlle Salmon     |      570|     39|
-|Bisaloo          |Hugo Gruson       |       77|     13|
-|cboettig         |Carl Boettiger    |      493|     12|
-|adamhsparks      |Adam H. Sparks    |     1188|      7|
-|mpadge           |mpadge            |      273|      7|
+|sckott           |Scott Chamberlain |     2038|     81|
+|jeroen           |Jeroen Ooms       |      729|     77|
+|maelle           |Maëlle Salmon     |      282|     32|
+|cboettig         |Carl Boettiger    |      444|     11|
 |richelbilderbeek |richelbilderbeek  |     1378|      6|
-|noamross         |Noam Ross         |      192|      6|
-|Rekyt            |Rekyt             |      225|      5|
-|wlandau          |wlandau           |     1451|      3|
+|mpadge           |mpadge            |      272|      6|
+|adamhsparks      |Adam H. Sparks    |     1186|      5|
 |Robinlovelace    |Robin Lovelace    |      442|      3|
 |wlandau-lilly    |wlandau-lilly     |      727|      2|
+|wlandau          |wlandau           |     1449|      1|
 
 
 ### Authors by number of repositories they contributed to
@@ -63,12 +60,12 @@ author_summary %>%
 
 |n_repo | n_author|
 |:------|--------:|
-|1      |      225|
-|2      |       54|
-|3      |       15|
-|4      |        3|
-|5      |        4|
-|6-10   |        6|
+|1      |      221|
+|2      |       44|
+|3      |        7|
+|4      |        4|
+|5      |        2|
+|6-10   |        3|
 |11-50  |        3|
 |50+    |        2|
 
@@ -77,10 +74,10 @@ author_summary %>%
 
 |n_commit | n_author|
 |:--------|--------:|
-|1        |       84|
-|2-5      |       78|
-|6-10     |       37|
-|11-100   |       72|
-|101-1000 |       37|
+|1        |       77|
+|2-5      |       68|
+|6-10     |       33|
+|11-100   |       68|
+|101-1000 |       36|
 |1000+    |        4|
 

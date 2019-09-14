@@ -36,7 +36,7 @@ dir.create(result_folder, recursive = TRUE, showWarnings = FALSE)
 ```
 
 ```{r clean,message=TRUE}
-commits_in_report_period <- here::here("cached_data", glue::glue("commits_{org_name}_{report_start_date}_{report_end_date}.csv")) %>%
+commits_in_report_period <- get_ropensci_commit_history_filename(report_end_date) %>%
     readr::read_csv() %>%
     dplyr::filter(!author_login %in% bot_gh_users)
 

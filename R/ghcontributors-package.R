@@ -1,6 +1,6 @@
 utils::globalVariables(c(
-    "author_id", "author_login", "commit_author_email", "commit_author_name",
-    "commits_in_report_period", "n_login"
+  "author_id", "author_login", "commit_author_email", "commit_author_name",
+  "commits_in_report_period", "n_login"
 ))
 
 #' @keywords internal
@@ -10,5 +10,7 @@ utils::globalVariables(c(
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
 #' @import dplyr
+#' @importFrom magrittr %>%
+#' @importFrom magrittr %T>%
 ## usethis namespace: end
 NULL
