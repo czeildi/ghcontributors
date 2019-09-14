@@ -1,0 +1,27 @@
+Package: ghcontributors
+Title: Code contributors to a github organization
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Ildiko",
+           family = "Czeller",
+           role = c("aut", "cre"),
+           email = "czeildi@gmail.com",
+           comment = c(ORCID = "0000-0002-9418-4589"))
+Description: Collect code contributors to a set fo repositories based on commits to GitHub and summarize them.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    gh,
+    here,
+    purrr,
+    readr,
+    rmarkdown,
+    knitr,
+    tibble,
+    dplyr,
+    magrittr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+Suggests: 
+    testthat (>= 2.1.0)

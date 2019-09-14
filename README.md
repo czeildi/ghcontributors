@@ -1,11 +1,15 @@
-# gh-contributors
+# GitHub contributors
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of gh-contributors is to summarize contributors to a GitHub organization over a period of time.
+The goal of ghcontributors is to summarize contributors to a GitHub organization over a period of time.
+
+Note, that structurally this repository is a package but it is not intended to be used in other projects.
 
 ## Running
+
+- Install dependencies with `devtools::install_dev_deps()`
 
 [Github personal access token](https://github.com/settings/tokens) with the following access:
 - `public_repo`

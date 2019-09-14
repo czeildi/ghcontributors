@@ -11,7 +11,7 @@ gh_token <- Sys.getenv("GH_CONTRIB_PAT")
 
 stopifnot(Sys.Date() >= report_end_date)
 
-api_response_cache_folder <- here::here("data", glue::glue("commits_{org_name}_{report_start_date}_{report_end_date}")) %T>%
+api_response_cache_folder <- here::here("cached_data", glue::glue("commits_{org_name}_{report_start_date}_{report_end_date}")) %T>%
     dir.create(recursive = TRUE, showWarnings = FALSE)
 
 repos_in_org_filename <- file.path(api_response_cache_folder, "repos.rds")
@@ -53,5 +53,5 @@ commits_in_report_period <- purrr::imap_dfr(repos, ~{
 
 readr::write_csv(
     commits_in_report_period,
-    here::here("data", glue::glue("commits_{org_name}_{report_start_date}_{report_end_date}.csv"))
+    here::here("cached_data", glue::glue("commits_{org_name}_{report_start_date}_{report_end_date}.csv"))
 )

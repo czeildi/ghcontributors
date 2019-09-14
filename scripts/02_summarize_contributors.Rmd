@@ -38,12 +38,12 @@ dir.create(result_folder, recursive = TRUE, showWarnings = FALSE)
 ```{r clean,message=TRUE}
 commits_in_report_period <- here::here("data", glue::glue("commits_{org_name}_{report_start_date}_{report_end_date}.csv")) %>%
     readr::read_csv() %>%
-    filter(!author_login %in% bot_gh_users)
+    dplyr::filter(!author_login %in% bot_gh_users)
 
 cleaned_commits <- commits_in_report_period %>%
     identify_authors_by_name() %>%
     unify_logins_by_email() %>%
-    filter(!is.na(author_id))
+    dplyr::filter(!is.na(author_id))
 
 message(nrow(commits_in_report_period) - nrow(cleaned_commits), " commits were discarded due to being unidentifiable.")
 ```
@@ -73,7 +73,7 @@ author_summary <- cleaned_commits %>%
 
 ```{r,echo=TRUE}
 author_summary %>% 
-    filter(n_commit * n_repo >= 1000) %>% 
+    dplyr::filter(n_commit * n_repo >= 1000) %>% 
     select(author_id, author_name, n_commit, n_repo) %>% 
     knitr::kable()
 ```

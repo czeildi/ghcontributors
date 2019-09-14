@@ -1,0 +1,6 @@
+^LICENSE\.md$
+^ghcontributors\.Rproj$
+^scripts$
+^results$
+^cached_data$
+^\.Rproj\.user$
