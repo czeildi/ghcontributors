@@ -1,7 +1,6 @@
 # report params -----------------------------------------------------------
 
-report_start_date <- as.Date("2018-09-01")
-report_end_date <- report_start_date + lubridate::period(1, "year")
+report_end_date <- as.Date("2019-09-01")
 gh_token <- Sys.getenv("GH_CONTRIB_PAT")
 
 stopifnot(Sys.Date() >= report_end_date)
