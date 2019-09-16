@@ -3,7 +3,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ghcontributors is to summarize contributors to a GitHub organization over a period of time.
+The goal of ghcontributors is to summarize contributors to a GitHub organization over a period of time. The whole script is specific to the use case of ropensci annual report but many components could be used to summarize contributors of other GitHub organizations.
 
 Note, that structurally this repository is a package but it is not intended to be used in other projects.
 
@@ -18,9 +18,9 @@ Note, that structurally this repository is a package but it is not intended to b
 Store it in your `.Renviron` with name `GH_CONTRIB_PAT` or change this line in `scripts/01_collect_contributors.R` to reflect the name of your token.
 
 - `devtools::load_all()`
-- commit history github api results are cached to disk by default because they take significant time to fetch. If you want to start fresh, delete the contents of `cached_data/commits_{report_end_date}`
-- run `scripts/01_collect_contributors.R`, this can take up to 10 minutes (requesting commit history for each repository)
-- knit `scripts/02_summarize_contributors.Rmd` (optionally change params in the yaml header) or call 
+- Commit history github api results are cached to disk by default because they take significant time to fetch. If you want to start fresh, delete the contents of `cached_data/commits_{report_end_date}`.
+- Run `scripts/01_collect_contributors.R`, this can take up to 10 minutes (requesting commit history for each repository).
+- knit `scripts/02_summarize_contributors.Rmd` (optionally change params in the yaml header) or call
 ```r
 rmarkdown::render(
     "scripts/02_summarize_contributors.Rmd",

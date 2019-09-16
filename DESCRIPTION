@@ -21,7 +21,8 @@ Imports:
     tibble,
     dplyr,
     magrittr,
-    glue
+    glue,
+    yaml
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Suggests: 

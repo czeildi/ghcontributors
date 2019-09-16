@@ -8,6 +8,7 @@ params:
     report_start_date: !r as.Date("2018-09-01")
     report_end_date: !r as.Date("2019-09-01")
     bot_gh_users: !r c("web-flow", "ropenscibot")
+    duplicates_yml_path: "scripts/people_w_multiple_gh_users.yml"
 ---
 
 ```{r setup, include=FALSE}
@@ -16,7 +17,7 @@ library("dplyr")
 library("magrittr")
 source(here::here("R/clean_authors.R"))
 options(readr.num_columns = 0)
-options(knitr.table.format = 'markdown')
+options(knitr.table.format = "markdown")
 ```
 
 ```{r report_params}
@@ -24,6 +25,7 @@ org_name <- params$org_name
 report_start_date <- params$report_start_date
 report_end_date <- params$report_end_date
 bot_gh_users <- params$bot_gh_users
+people_w_multiple_gh_users <- yaml::yaml.load_file(here::here(params$duplicates_yml_path))
 ```
 
 - Github organization: **`r org_name`**.
@@ -35,36 +37,54 @@ result_folder <- here::here("results", glue::glue("{org_name}_{report_start_date
 dir.create(result_folder, recursive = TRUE, showWarnings = FALSE)
 ```
 
-```{r clean,message=TRUE}
-commits_in_report_period <- get_ropensci_commit_history_filename(report_end_date) %>%
-    readr::read_csv() %>%
-    dplyr::filter(!author_login %in% bot_gh_users)
-
-cleaned_commits <- commits_in_report_period %>%
-    identify_authors_by_name() %>%
-    unify_logins_by_email() %>%
-    dplyr::filter(!is.na(author_id))
-
-message(nrow(commits_in_report_period) - nrow(cleaned_commits), " commits were discarded due to being unidentifiable.")
+```{r read,message=TRUE}
+historical_commits <- report_end_date %>% 
+  get_ropensci_commit_history_filename() %>%
+  readr::read_csv() %>%
+  dplyr::filter(!author_login %in% bot_gh_users)
 ```
+
+Potential duplicates (1 person with multiple GitHub logins) are identified based on commit name and email. Based on `r params$duplicates_yml_path` those will be collapsed where the below `will_be_collapsed` column in `TRUE`.
+
+```{r duplicates,message=TRUE}
+# TODO report duplicates even if not clearly present in data
+potential_duplicates <- report_potential_duplicates(
+  historical_commits, people_w_multiple_gh_users
+)
+knitr::kable(select(potential_duplicates, -author_login_2))
+```
+
+```{r clean,message=TRUE}
+cleaned_commits <- historical_commits %>%
+  collapse_duplicates(filter(potential_duplicates, will_be_collapsed == TRUE)) %>% 
+  identify_authors_by_name() %>%
+  unify_logins_by_email() %>%
+  dplyr::filter(!is.na(author_id))
+message(
+  nrow(historical_commits) - nrow(cleaned_commits),
+  " commits were discarded due to being unidentifiable."
+)
+```
+
+### New contributors
 
 ```{r num_contributor}
 authors <- cleaned_commits %>%
-    group_by(author_id, commit_author_name, is_identifiable_by_login) %>%
-    summarize(freq = n()) %>%
-    group_by(author_id, is_identifiable_by_login) %>%
-    summarize(author_name = first(commit_author_name, -freq))
+  group_by(author_id, commit_author_name, is_identifiable_by_login) %>%
+  summarize(freq = n()) %>%
+  group_by(author_id, is_identifiable_by_login) %>%
+  summarize(author_name = first(commit_author_name, -freq))
 
 author_summary <- cleaned_commits %>%
-    group_by(author_id) %>%
-    summarise(
-        n_commit = n(),
-        n_repo = n_distinct(repo)
-    ) %>%
-    ungroup() %>%
-    inner_join(authors, by = "author_id") %>%
-    arrange(-n_repo, -n_commit) %T>%
-    readr::write_csv(file.path(result_folder, "authors.csv"))
+  group_by(author_id) %>%
+  summarise(
+    n_commit = n(),
+    n_repo = n_distinct(repo)
+  ) %>%
+  ungroup() %>%
+  inner_join(authors, by = "author_id") %>%
+  arrange(-n_repo, -n_commit) %T>%
+  readr::write_csv(file.path(result_folder, "authors.csv"))
 ```
 
 **Total number of contributors in the past year: `r nrow(author_summary)`.**
@@ -72,10 +92,10 @@ author_summary <- cleaned_commits %>%
 ### Top contributors
 
 ```{r,echo=TRUE}
-author_summary %>% 
-    dplyr::filter(n_commit * n_repo >= 1000) %>% 
-    select(author_id, author_name, n_commit, n_repo) %>% 
-    knitr::kable()
+author_summary %>%
+  dplyr::filter(n_commit * n_repo >= 1000) %>%
+  select(author_id, author_name, n_commit, n_repo) %>%
+  knitr::kable()
 ```
 
 
@@ -83,35 +103,35 @@ author_summary %>%
 
 ```{r authors_by_num_repo}
 author_summary %>%
-    ungroup() %>%
-    arrange(-n_repo) %>%
-    mutate(n_repo = cut(
-        n_repo,
-        breaks = c(0:5, 10, 50, 1000),
-        labels = c(as.character(1:5), "6-10", "11-50", "50+")
-    )) %>%
-    group_by(n_repo) %>%
-    summarize(n_author = n()) %>%
-    ungroup() %T>%
-    readr::write_csv(file.path(result_folder, "authors_by_num_repo.csv")) %>% 
-    knitr::kable()
+  ungroup() %>%
+  arrange(-n_repo) %>%
+  mutate(n_repo = cut(
+    n_repo,
+    breaks = c(0:5, 10, 50, 1000),
+    labels = c(as.character(1:5), "6-10", "11-50", "50+")
+  )) %>%
+  group_by(n_repo) %>%
+  summarize(n_author = n()) %>%
+  ungroup() %T>%
+  readr::write_csv(file.path(result_folder, "authors_by_num_repo.csv")) %>%
+  knitr::kable()
 ```
 
 ### Authors by number of commits they made
 
 ```{r authors_by_num_commit}
 author_summary %>%
-    ungroup() %>%
-    arrange(-n_commit) %>%
-    mutate(n_commit = cut(
-        n_commit,
-        breaks = c(0, 1, 5, 10, 100, 1000, 10000),
-        labels = c("1", "2-5", "6-10", "11-100", "101-1000", "1000+")
-    )) %>%
-    group_by(n_commit) %>%
-    summarize(n_author = n()) %>%
-    ungroup() %T>%
-    readr::write_csv(file.path(result_folder, "authors_by_num_commit.csv")) %>% 
-    knitr::kable()
+  ungroup() %>%
+  arrange(-n_commit) %>%
+  mutate(n_commit = cut(
+    n_commit,
+    breaks = c(0, 1, 5, 10, 100, 1000, 10000),
+    labels = c("1", "2-5", "6-10", "11-100", "101-1000", "1000+")
+  )) %>%
+  group_by(n_commit) %>%
+  summarize(n_author = n()) %>%
+  ungroup() %T>%
+  readr::write_csv(file.path(result_folder, "authors_by_num_commit.csv")) %>%
+  knitr::kable()
 ```
 
