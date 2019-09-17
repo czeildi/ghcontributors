@@ -26,7 +26,7 @@ report_potential_duplicates <- function(commits, people_w_multiple_gh_users) {
     inner_join(authors_with_login, by = "commit_author_email")
 
   rbind(duplicate_author_names, duplicate_author_emails) %>%
-    left_join(known_duplicates, by = "author_login") %>%
+    full_join(known_duplicates, by = "author_login") %>%
     mutate(will_be_collapsed = !is.na(author_login_2)) %>%
     select(-n) %>%
     arrange(will_be_collapsed)

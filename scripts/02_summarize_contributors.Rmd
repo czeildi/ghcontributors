@@ -47,7 +47,6 @@ historical_commits <- report_end_date %>%
 Potential duplicates (1 person with multiple GitHub logins) are identified based on commit name and email. Based on `r params$duplicates_yml_path` those will be collapsed where the below `will_be_collapsed` column in `TRUE`.
 
 ```{r duplicates,message=TRUE}
-# TODO report duplicates even if not clearly present in data
 potential_duplicates <- report_potential_duplicates(
   historical_commits, people_w_multiple_gh_users
 )
