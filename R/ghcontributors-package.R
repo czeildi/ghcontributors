@@ -1,6 +1,7 @@
 utils::globalVariables(c(
-  "author_id", "author_login", "commit_author_email", "commit_author_name",
-  "commits_in_report_period", "n_login"
+  "author_login", "commit_author_email", "commit_author_name",
+  "commits_in_report_period", "n_login",
+  "author_login_2", "standardized_author_name", "will_be_collapsed"
 ))
 
 #' @keywords internal

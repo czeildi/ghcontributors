@@ -9,17 +9,15 @@ Note, that structurally this repository is a package but it is not intended to b
 
 ## Running
 
+- Clone repository (do not install)
 - Install dependencies with `devtools::install_dev_deps()`
-
-[Github personal access token](https://github.com/settings/tokens) with the following access:
-- `public_repo`
-- `read:org`
-
-Store it in your `.Renviron` with name `GH_CONTRIB_PAT` or change this line in `scripts/01_collect_contributors.R` to reflect the name of your token.
-
+- [Github personal access token](https://github.com/settings/tokens) with the following access:
+  - `public_repo`
+  - `read:org`
+  - Store it in your `.Renviron` with name `GH_CONTRIB_PAT` or change this line in `scripts/01_collect_contributors.R` to reflect the name of your token.
 - `devtools::load_all()`
 - Commit history github api results are cached to disk by default because they take significant time to fetch. If you want to start fresh, delete the contents of `cached_data/commits_{report_end_date}`.
-- Run `scripts/01_collect_contributors.R`, this can take up to 10 minutes (requesting commit history for each repository).
+- Run `scripts/01_collect_contributors.R`, this can take up to 30 minutes (requesting commit history for each repository).
 - knit `scripts/02_summarize_contributors.Rmd` (optionally change params in the yaml header) or call
 ```r
 rmarkdown::render(
@@ -41,5 +39,5 @@ rmarkdown::render(
 
 ## Notes
 
-- 1 person might use multiple github users
+- 1 person might use multiple github users, these are collapsed to the best of our knowledge based on `scripts/people_with_multiple_gh_users.yml`
 - for some commits, no user identification is available

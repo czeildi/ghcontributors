@@ -6,7 +6,8 @@
 \alias{ghcontributors-package}
 \title{ghcontributors: Code contributors to a github organization}
 \description{
-Collect code contributors to a set fo repositories based on commits to GitHub and summarize them.
+Collect code contributors to a set fo repositories based on commits
+  to GitHub and summarize them.
 }
 \author{
 \strong{Maintainer}: Ildiko Czeller \email{czeildi@gmail.com} (0000-0002-9418-4589)

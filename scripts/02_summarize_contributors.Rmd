@@ -1,5 +1,5 @@
 ---
-title: "summarize contributors"
+title: "code contributors to GitHub org"
 output: 
     html_document:
         keep_md: yes
@@ -44,56 +44,83 @@ historical_commits <- report_end_date %>%
   dplyr::filter(!author_login %in% bot_gh_users)
 ```
 
-Potential duplicates (1 person with multiple GitHub logins) are identified based on commit name and email. Based on `r params$duplicates_yml_path` those will be collapsed where the below `will_be_collapsed` column in `TRUE`.
+Potential duplicates (1 person with multiple GitHub logins) are identified based on commit name and email. Based on *`r params$duplicates_yml_path`* those will be collapsed where the below `will_be_collapsed` column is `TRUE`.
 
 ```{r duplicates,message=TRUE}
+standardized_commits <- historical_commits %>% 
+  mutate(standardized_author_name = gsub("[ _-]+", "", tolower(commit_author_name)))
 potential_duplicates <- report_potential_duplicates(
-  historical_commits, people_w_multiple_gh_users
+  standardized_commits, people_w_multiple_gh_users
 )
 knitr::kable(select(potential_duplicates, -author_login_2))
 ```
 
+Commit data is cleaned: when GitHub login is not available, commits are identified based on commit author name or email. For each GitHub login, the most frequently used author name is used.
+
+```{r identify_unknown_authors}
+identified_commits <- standardized_commits %>% 
+  collapse_duplicates(filter(potential_duplicates, will_be_collapsed == TRUE)) %>%
+  identify_authors_by_name() %>% 
+  identify_authors_by_email() %>% 
+  identify_authors_by_login_as_name() %>% 
+  mutate(author_login = if_else(is.na(author_login), standardized_author_name, author_login))
+author_ids <- identified_commits %>% 
+  select(author_login, standardized_author_name, commit_author_email) %>% 
+  unique()
+```
+
 ```{r clean,message=TRUE}
-cleaned_commits <- historical_commits %>%
-  collapse_duplicates(filter(potential_duplicates, will_be_collapsed == TRUE)) %>% 
-  identify_authors_by_name() %>%
-  unify_logins_by_email() %>%
-  dplyr::filter(!is.na(author_id))
+cleaned_commits <- identified_commits %>%
+  dplyr::filter(!is.na(author_login)) %>% 
+  unify_names_for_login()
 message(
-  nrow(historical_commits) - nrow(cleaned_commits),
-  " commits were discarded due to being unidentifiable."
+  nrow(historical_commits) - nrow(cleaned_commits), " out of ",
+  nrow(historical_commits),
+  " commits were discarded due to being unidentifiable\nbetween ",
+  as.Date(min(historical_commits$commit_date, na.rm = TRUE)), " and ",
+  as.Date(max(historical_commits$commit_date, na.rm = TRUE)), "."
 )
 ```
 
-### New contributors
+### Contributors in the report period
+
+```{r new_contributors}
+commits_in_report_period <- cleaned_commits %>% 
+  filter(as.Date(commit_date) >= report_start_date)
+past_commits <- cleaned_commits %>% 
+  filter(as.Date(commit_date) < report_start_date)
+new_contributors <- anti_join(
+  commits_in_report_period %>% select(author_login, commit_author_name) %>% unique(),
+  past_commits %>% select(author_login) %>% unique(),
+  by = "author_login"
+) %T>% 
+  readr::write_csv(file.path(result_folder, "new_contributors.csv"))
+```
 
 ```{r num_contributor}
-authors <- cleaned_commits %>%
-  group_by(author_id, commit_author_name, is_identifiable_by_login) %>%
-  summarize(freq = n()) %>%
-  group_by(author_id, is_identifiable_by_login) %>%
-  summarize(author_name = first(commit_author_name, -freq))
-
-author_summary <- cleaned_commits %>%
-  group_by(author_id) %>%
+authors <- commits_in_report_period %>% 
+  select(author_login, author_name = commit_author_name) %>% 
+  unique()
+author_summary <- commits_in_report_period %>%
+  group_by(author_login) %>%
   summarise(
     n_commit = n(),
     n_repo = n_distinct(repo)
   ) %>%
   ungroup() %>%
-  inner_join(authors, by = "author_id") %>%
+  inner_join(authors, by = "author_login") %>%
+  select(author_login, author_name, n_commit, n_repo) %>% 
   arrange(-n_repo, -n_commit) %T>%
   readr::write_csv(file.path(result_folder, "authors.csv"))
 ```
 
-**Total number of contributors in the past year: `r nrow(author_summary)`.**
+Total number of contributors in the report period: **`r nrow(author_summary)`**. From this, **`r nrow(new_contributors)`** contributed for the first time in the report period.
 
 ### Top contributors
 
 ```{r,echo=TRUE}
 author_summary %>%
   dplyr::filter(n_commit * n_repo >= 1000) %>%
-  select(author_id, author_name, n_commit, n_repo) %>%
   knitr::kable()
 ```
 

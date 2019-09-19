@@ -8,7 +8,7 @@ fetch_ropensci_package_repos <- function(gh_token = NULL, api_limit = 10000) {
   ro_registry <- jsonlite::read_json(
     "https://raw.githubusercontent.com/ropensci/roregistry/gh-pages/registry.json"
   )
-  ro_registry_repos <- purrr::keep(ro_registry$packages, ~grepl("/ropensci/", .[["url"]])) %>%
+  ro_registry_repos <- purrr::keep(ro_registry$packages, ~ grepl("/ropensci/", .[["url"]])) %>%
     purrr::map_chr("name")
   intersect(repos_in_org, ro_registry_repos)
 }
