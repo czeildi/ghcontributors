@@ -13,9 +13,6 @@ params:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-library("dplyr")
-library("magrittr")
-source(here::here("R/clean_authors.R"))
 options(readr.num_columns = 0)
 options(knitr.table.format = "markdown")
 ```
