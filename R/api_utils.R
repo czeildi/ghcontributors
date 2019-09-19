@@ -3,6 +3,8 @@ transform_commits_api_response_to_tibble <- function(commits_api_response, repo)
     return(tibble::tibble(
       repo = character(0),
       commit_date = character(0),
+      commit_author_name = character(0),
+      commit_author_email = character(0),
       author_login = character(0)
     ))
   }

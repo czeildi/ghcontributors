@@ -1,6 +1,6 @@
 utils::globalVariables(c(
   "author_login", "commit_author_email", "commit_author_name",
-  "commits_in_report_period", "n_login",
+  "commits_in_report_period", "n_login", "n_commit",
   "author_login_2", "standardized_author_name", "will_be_collapsed"
 ))
 

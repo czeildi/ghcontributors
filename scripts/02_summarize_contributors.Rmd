@@ -126,16 +126,13 @@ author_summary %>%
 
 ```{r authors_by_num_repo}
 author_summary %>%
-  ungroup() %>%
-  arrange(-n_repo) %>%
   mutate(n_repo = cut(
     n_repo,
     breaks = c(0:5, 10, 50, 1000),
     labels = c(as.character(1:5), "6-10", "11-50", "50+")
   )) %>%
   group_by(n_repo) %>%
-  summarize(n_author = n()) %>%
-  ungroup() %T>%
+  summarize(n_author = n()) %T>%
   readr::write_csv(file.path(result_folder, "authors_by_num_repo.csv")) %>%
   knitr::kable()
 ```
@@ -144,16 +141,13 @@ author_summary %>%
 
 ```{r authors_by_num_commit}
 author_summary %>%
-  ungroup() %>%
-  arrange(-n_commit) %>%
   mutate(n_commit = cut(
     n_commit,
     breaks = c(0, 1, 5, 10, 100, 1000, 10000),
     labels = c("1", "2-5", "6-10", "11-100", "101-1000", "1000+")
   )) %>%
   group_by(n_commit) %>%
-  summarize(n_author = n()) %>%
-  ungroup() %T>%
+  summarize(n_author = n()) %T>%
   readr::write_csv(file.path(result_folder, "authors_by_num_commit.csv")) %>%
   knitr::kable()
 ```

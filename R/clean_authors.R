@@ -1,9 +1,9 @@
 unify_names_for_login <- function(commits) {
   commits %>%
     group_by(author_login, commit_author_name) %>%
-    summarize(n = n()) %>%
+    summarize(n_commit = n()) %>%
     group_by(author_login) %>%
-    summarize(commit_author_name = first(commit_author_name, order_by = -n)) %>%
+    summarize(commit_author_name = first(commit_author_name, order_by = -n_commit)) %>%
     right_join(select(commits, -commit_author_name), by = "author_login")
 }
 
