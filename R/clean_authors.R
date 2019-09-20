@@ -7,6 +7,18 @@ unify_names_for_login <- function(commits) {
     right_join(select(commits, -commit_author_name), by = "author_login")
 }
 
+identify_unknown_authors <- function(commits) {
+  commits %>%
+    identify_authors_by_name() %>%
+    identify_authors_by_email() %>%
+    identify_authors_by_login_as_name() %>%
+    mutate(author_login = if_else(
+      is.na(author_login),
+      standardized_author_name,
+      author_login
+    ))
+}
+
 identify_authors_by_name <- function(commits) {
   author_names_with_unique_login <- commits %>%
     filter(!is.na(author_login)) %>%

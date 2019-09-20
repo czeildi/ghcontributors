@@ -54,22 +54,13 @@ knitr::kable(select(potential_duplicates, -author_login_2))
 
 Commit data is cleaned: when GitHub login is not available, commits are identified based on commit author name or email. For each GitHub login, the most frequently used author name is used.
 
-```{r identify_unknown_authors}
-identified_commits <- standardized_commits %>% 
-  collapse_duplicates(filter(potential_duplicates, will_be_collapsed == TRUE)) %>%
-  identify_authors_by_name() %>% 
-  identify_authors_by_email() %>% 
-  identify_authors_by_login_as_name() %>% 
-  mutate(author_login = if_else(is.na(author_login), standardized_author_name, author_login))
-author_ids <- identified_commits %>% 
-  select(author_login, standardized_author_name, commit_author_email) %>% 
-  unique()
-```
-
 ```{r clean,message=TRUE}
-cleaned_commits <- identified_commits %>%
+cleaned_commits <- standardized_commits %>% 
+  collapse_duplicates(filter(potential_duplicates, will_be_collapsed == TRUE)) %>%
+  identify_unknown_authors() %>% 
   dplyr::filter(!is.na(author_login)) %>% 
   unify_names_for_login()
+
 message(
   nrow(historical_commits) - nrow(cleaned_commits), " out of ",
   nrow(historical_commits),
