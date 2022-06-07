@@ -37,7 +37,7 @@ dir.create(result_folder, recursive = TRUE, showWarnings = FALSE)
 ```{r read,message=TRUE}
 historical_commits <- report_end_date %>% 
   get_ropensci_commit_history_filename() %>%
-  readr::read_csv() %>%
+  readr::read_csv(show_col_types = FALSE) %>%
   dplyr::filter(!author_login %in% bot_gh_users)
 ```
 

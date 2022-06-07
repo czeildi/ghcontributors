@@ -11,7 +11,7 @@ collapse_duplicates <- function(commits, duplicates) {
 report_potential_duplicates <- function(commits, people_w_multiple_gh_users) {
   known_duplicates <- people_w_multiple_gh_users %>%
     tibble::enframe(name = "author_login_2", value = "author_login") %>%
-    tidyr::unnest() %>%
+    tidyr::unnest(cols = c(author_login)) %>%
     rbind(tibble::tibble(author_login = names(people_w_multiple_gh_users), author_login_2 = names(people_w_multiple_gh_users)))
 
   identify_duplicate_ids(commits) %>%
