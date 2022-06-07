@@ -18,7 +18,7 @@ Note, that structurally this repository is a package but it is not intended to b
 - `devtools::load_all()`
 - Commit history github api results are cached to disk by default because they take significant time to fetch. If you want to start fresh, delete the contents of `cached_data/commits_{report_end_date}`.
 - Run `scripts/01_collect_contributors.R`, this can take up to 30 minutes (requesting commit history for each repository).
-- knit `scripts/02_summarize_contributors.Rmd` (optionally change params in the yaml header) or call
+- call
 ```r
 rmarkdown::render(
     "scripts/02_summarize_contributors.Rmd",
@@ -31,6 +31,7 @@ rmarkdown::render(
     output_file = "code_contributors"
 )
 ```
+(optionally change params in the yaml header)
 
 ## Results
 
