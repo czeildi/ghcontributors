@@ -1,5 +1,3 @@
-context("clean_authors")
-
 describe("unify_names_for_login", {
   it("selects most frequent names", {
     commits <- tibble::tribble(
