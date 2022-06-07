@@ -3,6 +3,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+Motivation: https://github.com/ropenscilabs/annual-report-help/issues/3
+
 The goal of ghcontributors is to summarize contributors to a GitHub organization over a period of time. The whole script is specific to the use case of ropensci annual report but many components could be used to summarize contributors of other GitHub organizations.
 
 Note, that structurally this repository is a package but it is not intended to be used in other projects.
